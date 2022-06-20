@@ -34,5 +34,6 @@ async function hh() {
 		await page.waitForSelector('.bloko-button.bloko-button_kind-primary.bloko-button_scale-small[href]');
 		const vacancy = await page.$('.bloko-button.bloko-button_kind-primary.bloko-button_scale-small[href]');
 		await vacancy.click();
+		await browser.close();
 }		
 hh();
