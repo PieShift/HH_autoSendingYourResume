@@ -6,7 +6,7 @@ const yourPassword = ('');
 const URL_TEST = 'https://hh.ru/account/login?backurl=%2F%3FhhtmFrom%3Dmain&hhtmFrom=main';
 
 async function hh() {
-		const browser = await puppeteer.launch({headless: false, slowMo: 10});
+		const browser = await puppeteer.launch({headless: false, slowMo: 100});
 		let page = await browser.newPage();
 		await page.goto(URL_TEST);
 		
@@ -31,17 +31,8 @@ async function hh() {
 		const currentVacancies = await page.$('div.applicant-resumes-recommendations-buttons > div > a');
 		await currentVacancies.click();
 		
-		await page.waitForSelector('.bloko-link[target = "_blank"]');
-		let vacancy = await page.$('.bloko-link[target = "_blank"]');
+		await page.waitForSelector('.bloko-button.bloko-button_kind-primary.bloko-button_scale-small[href]');
+		const vacancy = await page.$('.bloko-button.bloko-button_kind-primary.bloko-button_scale-small[href]');
 		await vacancy.click();
-		
-		const newPagePromise = new Promise(x => browser.once('targetcreated', target => x(target.page())));
-		page = await newPagePromise;
-		page.bringToFront();
-		
-		await page.waitForSelector('.bloko-button.bloko-button_kind-success.bloko-button_scale-large.bloko-button_stretched');
-		const vacancyN = await page.$('.bloko-button.bloko-button_kind-success.bloko-button_scale-large.bloko-button_stretched');
-		await vacancyN.click();
-		
 }		
-hh()
+hh();
