@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 /// Enter your email and password here
-const yourEmail = ('saint.focus.ima@gmail.com');
-const yourPassword = ('H833OC-rus');
+const yourEmail = ('');
+const yourPassword = ('');
 /// Enter your email and password here
 const URL_TEST = 'https://hh.ru/account/login?backurl=%2F%3FhhtmFrom%3Dmain&hhtmFrom=main';
 
