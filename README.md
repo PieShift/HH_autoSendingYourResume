@@ -2,4 +2,6 @@
 Code for auto sending your resume on hh.ru
 
 Preparatory step:
-enter login + password into the code
+1. Enter login + password into the code
+2. Be having at least 1 resume in your profile
+3. Your resume is visible
