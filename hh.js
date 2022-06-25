@@ -35,4 +35,5 @@ async function hh() {
 		await vacancy.click();
 		await browser.close();
 }		
+
 hh();
